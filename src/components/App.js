@@ -15,7 +15,8 @@ function buttonClick(){
 }
  
   return (
-    <div>
+    <div id='main'>
+      <div id='timer'>
   <input id='input' value={input} onChange={changeInput} />
   
       <p id='intro'>Concated String</p>
@@ -23,6 +24,7 @@ function buttonClick(){
       <button id='button' onClick={buttonClick}>
         Click me
       </button>
+      </div>
     </div>
   );
 }
