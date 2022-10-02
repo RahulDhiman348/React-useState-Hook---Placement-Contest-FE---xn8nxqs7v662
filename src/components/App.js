@@ -1,30 +1,28 @@
-
-import React, { useState } from 'react';
+import "../styles/App.css";
+import React, { useState } from "react";
 
 export default function App() {
- //code here 
-const[string,setString]= useState("");
-const[input, setInput]= useState("");
-const text= "";
-function changeInput(event){
-setInput(event.target.value);
-}
-function buttonClick(){
-  setString(string+input);
-  setInput("");
-}
- 
+  //code here
+  const [inputValue, setInputValue] = useState("");
+  const [text, setText] = useState("");
+
+  const changeInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const buttonClick = () => {
+    setText(text + inputValue);
+    setInputValue("");
+  };
   return (
-    <div id='main'>
-      <div id='timer'>
-  <input id='input' value={input} onChange={changeInput} />
-  
-      <p id='intro'>Concated String</p>
-      <p id='text'>{string} </p>
-      <button id='button' onClick={buttonClick}>
+    <div>
+      <input id="input" value={inputValue} onChange={changeInput} />
+
+      <p id="intro">Concated String</p>
+      <p id="text">{text} </p>
+      <button id="button" onClick={buttonClick}>
         Click me
       </button>
-      </div>
     </div>
   );
 }
